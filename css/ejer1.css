@@ -1,0 +1,193 @@
+.text{
+    width: 20%;
+    height: auto;
+    background-color: gray;
+    overflow-y: scroll;
+}
+
+
+.header{
+    background-color:lightcoral;
+    height: 30px;
+    overflow: hidden;
+    position: sticky;
+    top:0px;
+    animation: adjust-header linear both;
+
+    animation-timeline: scroll();
+    animation-range:0 200px;
+
+    /* padding-top: 0.1px; */
+    /* border-top: 1px solid lightcoral; */
+}
+
+@keyframes adjust-header{
+  to {
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(5px);
+    font-size: 12px;
+    height: 24px;
+  }
+}
+.title{
+    margin:0;
+}
+
+.box2{
+margin-left:auto;
+margin-right: auto;
+background-color: rgb(66, 90, 90);
+width:100px;
+height: 100px;
+}
+
+.box1{
+height: 100px;
+background-color: rgb(38, 196, 196);
+width:100px;
+border-radius: 10px;
+margin-top: 3%;
+}
+.div{
+  color:rgb(144, 124, 163);
+  font-size: 200px;
+}
+
+/* solo cuando paso el mouse gira */
+/* .box1:hover{
+    animation-name: rotate;
+    animation-duration: 0.7s;
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  */
+
+
+
+
+
+/* siempre esta girando */
+  /* .box1{
+    height: 100px;
+    background-color: rgb(38, 196, 196);
+    width:100px;
+    border-radius: 10px;
+    margin-top: 3%;
+    animation-name: rotate;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
+  .box1:hover{
+    animation-play-state: running;
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
+
+  
+
+  /* pasar el mouse sobre la imagen se mueve */
+/* .box{
+  background:#fff url('ropa.png');
+  background-position: 0 0;
+  width:200px;
+  height:400px;
+  transition: background-position 2s ease-out;
+  }
+  .box:hover{
+    background-position: -670px 0;;
+  } */
+
+
+
+/* se va rotando la imagen automaticamente por siempre */
+  /* .box{
+    background:#fff url('ropa.png');
+    background-position: 0 0;
+    width:200px;
+    height:300px;
+    animation: walk 4s steps(6) infinite;    
+}
+@keyframes walk {
+  from{
+    background-position:0 0;
+  }
+  to{
+    background-position: -600px 0;
+  }
+} */
+
+/* definir el degradado y centrar una imagen en un div */
+/* .element{
+  width:500px;
+  height: 200px;
+  background-image: 
+  linear-gradient(to right, rgb(255 0 0 /70%), black),
+  url('ropa.png');
+  background-size: auto, cover;
+  border: 2px solid black;
+} */
+
+
+
+/* radial gradiante */
+/* .element{
+  width:500px;
+  height: 200px;
+  background-image: radial-gradient(circle farthest-corner at 30% 50%, red, blue);
+  border: 2px solid black;
+} */
+
+/* .element{
+  width:500px;
+  height: 200px;
+  background-image: 
+  linear-gradient(
+    -45deg,
+    black,
+    transparent
+  ),
+  radial-gradient(
+    circle,
+    black 0 35%,
+    transparent 35% 100%
+  ),
+  repeating-radial-gradient(
+    circle,
+    black 0 1%,
+    red 0 10%,
+   darkred 15% 25%,
+   black 30% 31%
+   );
+  border: 2px solid black;
+} */
+
+
+/* es mejor utilizar un outline que un border para un hover */
+/* .border{
+  width:80px;
+  height:50px;
+}
+.border:hover{
+  outline: 2px solid red
+} */
+
+.element1{
+  width: 120px;
+  height: 30px;
+  padding: 7px;
+  box-sizing: border-box;
+  background-color: red;
+  border:3px solid black;
+}
