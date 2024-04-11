@@ -6,7 +6,7 @@
 }
 
 
-.header{
+header{
     background-color:lightcoral;
     height: 30px;
     overflow: hidden;
@@ -175,19 +175,1445 @@ margin-top: 3%;
 
 
 /* es mejor utilizar un outline que un border para un hover */
-/* .border{
+.border{
   width:80px;
+  background-color: var(--element1-color);
   height:50px;
+  border: var(--root-border-width) solid var(--root-border-color);
+
 }
 .border:hover{
   outline: 2px solid red
-} */
+}
+
+
+:root {
+	--element1-color: rgb(166, 166, 218); 
+	--root-border-width: 2px; /* Define el ancho del borde del root */
+	--root-border-color: blue; /* Define el color del borde del root */
+  }
 
 .element1{
   width: 120px;
   height: 30px;
   padding: 7px;
   box-sizing: border-box;
-  background-color: red;
-  border:3px solid black;
+  border: var(--root-border-width) solid var(--root-border-color);
+  background-color: var(--element1-color);
 }
+
+
+.animacion2{
+	/* background-color: var(--element1-color); */
+font-size: 40px;
+  display: block;
+  font-family: monospace;
+  white-space: nowrap;
+  /* estás indicando que el texto dentro del elemento .animacion2 no debe hacer saltos de línea automáticamente,
+   sino que debe permanecer en una sola línea, sin importar cuánto texto haya. */
+  border-right: 4px solid;
+  width:12ch;
+  /* equivalente a 12 caracteres en el tipo de letra actual, sin importar cuál sea ese tipo de letra. 
+  Esto asegurará que el ancho del elemento sea proporcional al tamaño de fuente y al tipo de letra utilizados. */
+  animation:typing 2s steps(12),/* Animación de escritura */
+  blink .5s infinite step-end alternate;/* Animación de parpadeo */
+  overflow: hidden;
+  /* La propiedad overflow: hidden; asegura que cualquier parte del contenido que sobresalga del elemento no sea visible. Esto es útil para mantener el efecto de escritura limpio y sin desbordamientos. */
+}
+@keyframes typing{
+  from {width:0} /* Comienza con una anchura de 0 */
+  /* La animación typing hace que el texto aparezca como si se estuviera escribiendo. Se define una duración de 2 segundos (2s) y se divide en 12 pasos (steps(12)), lo que significa que la animación se divide en 12 etapas, una para cada carácter. Comienza desde una anchura de 0 (el texto no visible) y se expande gradualmente hasta que todos los caracteres estén visibles. */
+}
+@keyframes blink{
+  50%{border-color: transparent;} /* Hace que el borde sea transparente al 50% de la animación */
+  /* La animación blink hace que el borde del elemento parpadee. Durante el 50% de la animación, el borde se vuelve transparente. Se repite infinitamente (infinite) y se alterna entre los estados inicial y final (alternate). */
+}
+
+
+
+.scroll1{
+  overflow: scroll;
+  width:5vw;
+  height: 20vh;
+  scrollbar-width: none;
+  scrollbar-color:blue lightblue;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #b95b5b;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/* -moz-osx-font-smoothing: grayscale; es una propiedad específica de Mozilla 
+(Firefox) para controlar la suavidad del texto en macOS. */
+.center1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* // delete the following line if no text is used */
+/* // edit the line if you wanna use other fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+/* // use only the available space inside the 400x400 frame */
+.frame2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+	background: linear-gradient(to top right, #43389f 0%, #4ec6ca 100%);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 'Courier New', Courier, sans-serif
+}
+
+.center2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.number {
+	position:relative;
+	height:100px;
+	width:200px;
+}
+
+.one-one {
+		position:absolute;
+    z-index: 1;
+		left:-16px;
+	  top:0px;
+    height: 40px;
+    width: 20px;
+    background: #fff;
+    border-radius: 3px;
+    transform: rotate(50deg);
+}
+
+.one-two {
+	position:absolute;
+	height: 100px;
+	width:25px;
+	background: #fff;
+	border-radius: 3px;
+	top:0px;
+	z-index:2;
+	box-shadow:2px 0px 10px rgb(0,0,0,0.2)
+}
+
+.zero-one, .zero-two {
+	position:absolute;
+	height:55px;
+	width:55px;
+	border: 24px solid #fff;
+	top: -5px;
+	border-radius:50%
+}
+
+.zero-one {
+	left:20px;
+	z-index:1;
+	box-shadow: 2px 0px 13px rgb(0,0,0,0.2)
+}
+
+.zero-two {
+	left:100px;
+}
+
+.main-text, .sub-text {
+	position:relative;
+	color:#fff;
+	font-weight:700;
+	text-transform:uppercase;
+  /* transformar el texto de un elemento a letras mayúsculas. */
+}
+.main-text {
+	font-size:5rem;
+	margin:0px;
+	box-sizing:border-box;
+	display:block;
+	top:-10px;
+}
+
+.sub-text {
+	position:relative;
+	font-size:23px;
+	font-weight:700;
+	color:#fff;
+	top:-20px;
+	text-align: center;
+	letter-spacing: 0.3px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.menu {
+	cursor: pointer;
+	width: 80px;
+	height: 52px;
+}
+
+
+
+.line-one {
+  background: #fff;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  animation: animate-line-one 0.7s cubic-bezier(0.4, 1, 0.7, 1) forwards;
+	box-shadow: 0px 2px 10px rgb(0,0,0,0.9);
+}
+
+.active .line-one {
+  animation: animate-line-one-back 0.7s cubic-bezier(0.4, 1, 0.7, 1) forwards !important;
+}
+
+
+.line-two {
+	background: #fff;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	margin: 15px 0;
+	animation: animate-line-two-back 0.7s forwards;
+	box-shadow: 0px 2px 10px rgb(0,0,0,0.9);
+}
+
+.active .line-two {
+  animation: animate-line-two 0.7s forwards;
+}
+
+.line-three {
+	background: #fff;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	animation: animate-line-three-back 0.7s forwards;
+	box-shadow: 0px 2px 10px rgb(0,0,0,0.9);
+}
+
+.active .line-three {
+    animation: animate-line-three 0.7s cubic-bezier(0.4, 1, 0.7, 1) forwards;
+}
+
+
+@keyframes animate-line-one {
+  0% {
+    transform: translateY(22px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(22px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes animate-line-one-back {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(24px) rotate(0);
+  }
+  100% {
+    transform: translateY(24px) rotate(45deg);
+  }
+}
+
+@keyframes animate-line-two {
+	0% {
+			transform: scale(1);
+			opacity: 1;
+	}
+	100% {
+			transform: scale(0);
+			opacity: 0;
+	}
+}
+@keyframes animate-line-two-back {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+	@keyframes animate-line-three {
+	0% {
+			transform: translate3d(0, 0, 0) rotate(0deg);
+	}
+	50% {
+			transform: translate3d(0, -24px, 0) rotate(0);
+	}
+	100% {
+			transform: translate3d(0, -24px, 0) rotate(135deg);
+	}
+}
+
+	@keyframes animate-line-three-back {
+0% 
+		{
+    transform: translate3d(0, -22px, 0) rotate(135deg);
+		}
+50% 
+		{
+    transform: translate3d(0, -22px, 0) rotate(0);
+		}
+100% 
+		{
+    transform: translate3d(0, 0, 0) rotate(0deg);
+		}
+}
+
+/* poner un footer siempre abajo
+position: fixed;
+bottom: 0%; */
+
+#ropa1{
+  aspect-ratio: 16/9;
+  width:300px;
+  height:auto;
+  filter: drop-shadow(
+    0 0 10px rgb(0, 0, 0, .8)
+  )
+}
+#ropa1:hover{
+  transform: scale(1.3);
+}
+/* responsividad sencilla */
+@media
+(600px <= width <= 1200px){
+  body{
+    background-color:blue
+  }
+}
+
+
+/* float */
+/* swiper */
+/* toastify */
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  /* background: #363847; */
+	background: #EDCFC7;
+	opacity: 0.9;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.title {
+	z-index: 5;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	font-family: 'Ninja Naruto', sans-serif;
+}
+
+.center4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.eyebrow {
+	  z-index: 5;
+    width: 250px;
+    height: 13px; 
+    position: absolute;
+		border: 1px solid black;
+  	background:
+    radial-gradient(farthest-side at top left,gray 100%,gray 100%) 100% 19%/29px 16% no-repeat,
+    radial-gradient(116% 70% at bottom right,gray 99%,transparent 100%),
+    radial-gradient(107% 100% at bottom right,gray 99%,transparent 100%);    transform: translate(-30%,-60px) rotate(40deg);
+	  border-top-right-radius: 0%;
+		border-top-left-radius: 100%; 
+		border-bottom-left-radius: 0%;
+		border-bottom-right-radius: 50%;
+}
+
+.scar-top {
+	z-index: 4;
+	top: -138px;
+	left: 20px;
+	position: absolute;
+	transform: rotate(15deg);
+	height: 90px;
+	width: 30px;
+	background: #B48A78;
+  --mask: 
+    conic-gradient(from 30deg at left,#0000,#000 1deg 119deg,#0000 120deg) left/70% 60px repeat-y,
+    conic-gradient(from -150deg at right,#0000,#000 1deg 119deg,#0000 120deg) right/35% 30px repeat-y;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+          /* conic-gradient: Esta función CSS crea un gradiente cónico, que es un tipo de gradiente que cambia de color a medida que se mueve alrededor de un punto central. En este caso, se están utilizando dos gradientes cónicos. Cada uno tiene cuatro parámetros: from, at, color-stop, y to. Estos parámetros definen la dirección del gradiente, el punto central, los colores y la ubicación de los colores en el gradiente. */
+}
+
+.scar-bottom {
+	z-index: 4;
+	top: 53px;
+	left: -25px;
+	position: absolute;
+	transform: rotate(15deg);
+	height: 90px;
+	width: 20px;
+	background: #B48A78;
+	border-radius: 20px;
+	border-top-left-radius: 30%;
+	border-top-right-radius: 30%;
+	border-bottom-left-radius: 100%;
+	border-bottom-right-radius: 100%;
+  --mask: 
+    conic-gradient(from 30deg at left,#0000,#000 1deg 119deg,#0000 120deg) left/40% 20px repeat-y,
+    conic-gradient(from -150deg at right,#0000,#000 1deg 119deg,#0000 120deg) right/62% 45px repeat-y;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.eye {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(65deg);
+    width: 160px;
+    height: 160px;
+	  box-shadow: inset 4px 8px 16px 0 rgba(0,0,0,0.5);
+    border-radius: 160px 0;
+		border-left: 10px solid black;
+		border-top: 5px solid black;
+		border-bottom: 4px solid black;
+		border-right: 1px solid black;
+    background: #D8D8D8;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    /* especifica que la animación comenzará lenta, luego acelerará
+     y finalmente desacelerará al final de la transición.
+      Este es un efecto comúnmente utilizado para transiciones suaves y naturales. */
+
+
+	.ball {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background: url("https://i.pinimg.com/originals/95/17/53/951753a4fb9bb0a0013a9badc2f7550e.gif");
+			background-size: 200px;
+			background-position: 50% 50%;
+			top: 30px;
+			left: 30px;
+			-webkit-animation: ball 5s ease-in-out infinite;
+			animation: ball 5s ease-in-out infinite;
+	}
+}
+
+.lid {
+	fill: #EDCFC7;
+	stroke: none;
+  /* Cuando se establece stroke: none;, significa que se está indicando que no
+   habrá borde visible en la forma o elemento al que se aplica esta propiedad.
+    En otras palabras, el contorno de la forma se hará invisible. */
+}
+
+.lid-top {
+  position: absolute;
+  z-index: 3;
+	left: -108px;
+	top: -75px;
+	transform: rotate(25deg) translateY(-60px);
+	width: 240px;
+  height: 106px;
+  animation: lid-top 10s ease-in-out infinite;
+}
+
+.lid-bottom {
+  position: absolute;
+  z-index: 2;
+	left: -121px;
+	top: -73px;
+	transform: rotate(-160deg) translateY(-60px);
+  width: 240px;
+  height: 150px;
+  animation: lid-bottom 10s ease-in-out infinite;
+}
+
+
+.frame:hover {
+
+	.lid-top {
+		transform: translateY(0);
+	}
+	.lid-bottom {
+		transform: translateY(0);
+	}
+
+}
+
+@keyframes lid-top {
+	0%,10%,18%, 26%,34%, 48%,56%, 76%, 84% {
+		transform: rotate(25deg) translateY(-60px);
+	}
+	14%, 30%, 52%, 80%, 100% {
+		transform:  rotate(25deg) translateY(0);
+	}
+}
+
+@keyframes lid-bottom {
+	0%,10%,18%, 26%,34%, 48%,56%, 76%, 84% {
+		transform: rotate(-160deg) translateY(-60px);
+	}
+	14%, 30%, 52%, 80%, 100% {
+		transform: rotate(-160deg) translateY(0);
+	}
+}
+
+@keyframes ball {
+	0%,14%, 56% {
+		transform: rotate(-45deg) translateX(0);
+	}
+	18%, 30% {
+		transform: rotate(-45deg) translate(-25px, 5px) scale(0.9);
+	}
+	34%, 52% {
+		transform: rotate(-45deg) translate(25px, 10px) scale(0.9);
+	}
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+.frame5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: white;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.hafa {
+	background: url("fecha.png");
+	height: 150px;
+	width: 200px;
+	position: absolute;
+	top: -150px;
+	left: -90px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	animation: jump-hafa 3.5s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.flag-border {
+  position: absolute;
+  background: #C62139;
+  width: 300px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+	animation: jump-flag-border 3.5s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.flag {
+  position: absolute;
+  width: 280px;
+  height: 130px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  background: #00297B;
+  z-index: 2;
+	animation: jump-flag-base 3.5s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.flag-seal-border {
+  position: absolute;
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotate(135deg);
+  border-radius: 95% 0 95% 0 / 80% 50% 80% 50%;
+	border: 1px solid #C62139 ;
+	animation: jump-flag-seal 3.5s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+.flag-seal {
+  position: absolute;
+	z-index: 4;
+  width: 100%;
+  height: 100%;
+	top: 0px;
+	transform: rotate(-135deg) scale(1.5);
+  background: url("https://media.tenor.com/irH4A7_8zNwAAAAM/bduck-duck.gif");
+	border-radius: 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes jump-hafa {
+	0%, 10% {
+ 			transform: scale(0);	
+	}
+	100% {
+			transform: scale(1);
+	}
+}
+
+@keyframes jump-flag-border {
+	0%, 10% {
+			box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+ 			transform: translate(-50%, -50%) scale(0);	
+	}
+	100% {
+			box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+			transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes jump-flag-base {
+	0%, 40% {
+			box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+			transform: translate(-50%, -50%) scale(0);
+	}
+	100% {
+			box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+			transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes jump-flag-seal {
+		0%, 70% {
+			box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+			transform: translate(-50%, -50%) rotate(135deg) scale(0);
+	}
+	100% {
+			box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+			transform: translate(-50%, -50%) rotate(135deg) scale(1);
+	}
+}
+
+
+.todo{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins' sans-serif;
+}
+.body{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background:url('ropa.png')no-repeat center;
+  background-size: cover;
+}
+section{
+position: relative;
+max-width: 400px;
+background-color: transparent;
+border:2px solid rgb(255,255,255,0.5);
+border-radius: 20px;
+backdrop-filter: blur(55px);
+/* Por ejemplo, si tienes un elemento con un fondo semitransparente y aplicas backdrop-filter: blur(55px);, 
+el fondo detrás de ese elemento se verá desenfocado, creando un efecto visual de profundidad o enfoque selectivo. */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2rem 3rem;
+}
+
+.inputbox input{
+  width:100%;
+  height:60px;
+  background: transparent;
+  border:none;
+  outline:none;
+  /* estás especificando que no deseas ningún contorno alrededor del elemento al que se aplica esta propiedad.  */
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+  color:#fff
+}
+
+.inputbox ion-icon{
+  /* ion-icon: Esto es un elemento personalizado utilizado en el framework de Ionic para mostrar iconos vectoriales. 
+  Los elementos <ion-icon> se utilizan para mostrar iconos en una aplicación web o móvil construida con Ionic. */
+position: absolute;
+right:8px;
+color:#fff;
+font-size:1.2rem;
+top:20px;
+}
+
+.forget{
+  margin:35px 0;
+  font-size: 0.85rem;
+  color:#fff;
+  display: flex;
+  justify-content: space-between;
+  /* En este caso, justify-content: space-between; distribuye los elementos de manera uniforme a lo largo del
+   eje principal, dejando el máximo espacio posible entre ellos */
+}
+
+h1{
+font-size: 2rem;
+color:#fff;
+text-align: center;
+}
+.inputbox{
+  position: relative;
+  margin:30px 0;
+  max-width: 310px;
+  /* Por otro lado, max-width es una propiedad CSS que se utiliza para establecer la anchura máxima que un elemento 
+  puede tener. Esto significa que el elemento no se puede expandir más allá de este ancho máximo, 
+  incluso si el contenido dentro del elemento es mayor. */
+  border-bottom: 2px solid #fff;
+
+}
+.inputbox label{
+  position: absolute;
+  top:50%;
+  left:5px;
+  transform: translateY(-50%);
+  /* Por ejemplo, si tienes un elemento que tiene una altura de 100 píxeles y aplicas transform: translateY(-50%);, 
+  el elemento se moverá hacia arriba 50 píxeles, es decir, la mitad de su altura, resultando en que el centro vertical
+   del elemento esté alineado con el 50% del contenedor. */
+  color:#fff;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+
+  /* all: Se refiere a todas las propiedades de estilo del elemento. Esto significa que cualquier cambio en cualquier 
+  propiedad de estilo, como color, tamaño, posición, etc., se verá afectado por la transición especificada.
+0.5s: Especifica la duración de la transición, en este caso, 0.5 segundos. Esta es la cantidad de tiempo que tomará para
+ que el cambio de estilo se complete durante la transición.
+ease-in-out: Es una función de temporización que controla cómo se acelera y desacelera la transición. En este caso, 
+ease-in-out proporciona una transición suave, comenzando lentamente, acelerando en el medio de la animación y luego
+ desacelerando hacia el final. */
+}
+input:focus ~ label,
+input:valid ~ label{
+  top:-5px;
+}
+/* mbas reglas tienen la propiedad top establecida en -5px. Esto significa que cuando se aplica cualquiera de estas
+ reglas, la etiqueta asociada se moverá hacia arriba 5 píxeles en relación con su posición original. Este tipo de
+  técnica es comúnmente utilizado en diseños de formularios para crear una experiencia de usuario más agradable, donde
+   las etiquetas se mueven hacia arriba y actúan como una indicación visual de que el campo de entrada está en uso o
+    contiene datos válidos. */
+
+.forget label{
+display: flex;
+align-items: center;
+}
+.forget label input{
+  margin-right:3px;
+}
+.forget a{
+  color:#fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.forget a:hover{
+  text-decoration: underline;
+}
+
+  button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255, 1);
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+  }
+button:hover{
+  background-color: rgb(255, 255, 255, 0.5);
+}
+.register{
+  font-size: 0.9rem;
+  color:#fff;
+  text-align: center;
+  margin:25px 0 10px;
+}
+
+.register p a{
+  text-decoration: none;
+  color:#fff;
+  font-weight: 600;
+}
+.register p a:hover{
+  text-decoration: underline
+}
+
+#ropa2{
+  width: 31vw;
+  height: 40vh;
+  object-fit: cover; 
+  filter:grayscale(100%)
+}
+#ropa2:hover{
+filter: grayscale(0%);
+transition: 2s all ease;
+}
+
+
+.frame6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #272C34;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.image {
+	background-color: #272C34;
+	width: 175px;
+	height: 175px;
+	border-radius: 50%;
+	overflow: hidden; 
+	position: relative;
+	clip-path: circle(87.5px at 87.5px 87.5px);
+}
+
+.sky {
+	background-color: #7DDFFC;
+	width: 100%;
+	height: 120px;
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+	border-bottom-left-radius: 0; 
+  border-bottom-right-radius: 0;
+	box-sizing: border-box;
+	animation: night-sky 4s cubic-bezier(0, 0.4, 0.49, 1) infinite;
+}
+
+.sun {
+	position: absolute;
+	background-color: #FFEF00;
+	z-index: 2;
+	width: 30px;
+	height: 30px;
+	top: 7px;
+	left: 77px;
+	border-radius: 50%;
+	transform-origin: 50% 400%;
+	animation: sun-rotation 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.pyramid-left {
+	position: absolute;
+	background: #F4F4F4;
+	width: 115px;
+	height: 55px;
+	top: 65px;
+	left: 30px;
+	clip-path: polygon(0% 100%, 100% 100%, 50% 0%);
+  /* La función polygon() acepta una lista de coordenadas que definen los
+   vértices del polígono. En este caso, los puntos se definen en términos
+    de porcentaje del ancho y alto del elemento, donde (0% 100%) representa 
+    el vértice inferior izquierdo, (100% 100%) representa el vértice inferior
+     derecho, y (50% 0%) representa el vértice superior central. */
+	animation: pyramid-shading 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.pyramid-right {
+	position: absolute;
+	background: #DDDADA;
+	width: 58px;
+	height: 55px;
+	top: 65px;
+	left: 87px;
+	clip-path: polygon(30% 100%, 100% 100%, 0% 0%);
+	animation: pyramid-shading 4s cubic-bezier(0.4, 0, 0.49, 1) infinite reverse;
+}
+
+.shadow {
+	position: absolute;
+	top: 120px;
+	left: -85px;
+	height: 30px;
+	width: 300px;
+	transform-origin: 50% 0%;
+	background-color: rgba(0, 0, 0 , 0.2);
+	clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+	animation: shadow-on-the-floor 4s cubic-bezier(0.4, 0, 0.49, 1) infinite;
+}
+
+.sand {
+	background-color:#F0DE75;
+	width: 100%;
+	height: 55px;
+	animation: night-sand 4s cubic-bezier(0, 0.4, 0.49, 1) infinite;
+}
+
+@keyframes night-sky {
+	0% {
+			background: #272C34;
+	}
+	30% {
+			background: #7DDFFC;
+	}
+	55% {
+			background: #FAA788;
+	}
+	70% {
+			background: #FAA788;
+	}
+	90% {
+			background: #3C3B5F;
+	}
+	100% {
+			background: #272C34;
+	}
+}
+
+@keyframes night-sand {
+	0% {
+			background: #272C34;
+      /* 0%: Define el estado inicial de la animación, estableciendo el color de fondo en un tono oscuro (posiblemente para representar la noche). */
+	}
+	30% {
+			background: #F0DE75;
+      /* 30%: Cambia el color de fondo al tono amarillo claro (#F0DE75) después del 30% del tiempo de la animación. */
+	}
+	70% {
+			background: #F0DE75;
+      /* 70%: Mantiene el color de fondo como el tono amarillo claro (#F0DE75) hasta el 70% del tiempo de la animación. */
+	}
+	100% {
+			background: #272C34;
+      /* 100%: Finaliza la animación volviendo al tono oscuro (#272C34), similar al estado inicial. */
+	}
+}
+
+
+
+
+@keyframes sun-rotation {
+	0% {
+			background: #F57209;
+			transform: rotate(-70deg);
+      /* 0%: Inicia la animación con un color de fondo naranja oscuro (#F57209) y una rotación de -70 grados. */
+	}
+	30% {
+			background: #FFEF00;
+			transform: rotate(-28deg);
+      /* 30%: Cambia el color de fondo al amarillo (#FFEF00) y ajusta la rotación a -28 grados. */
+	}
+	70% {
+			background: #FF8A00;
+      /* 70%: Cambia el color de fondo a un tono de naranja más claro (#FF8A00). */
+	}
+	100% {
+			background: #F57209;
+			transform: rotate(70deg);
+      /* 100%: Finaliza la animación volviendo al color de fondo naranja oscuro (#F57209) y una rotación de 70 grados. */
+	}
+}
+
+
+
+
+@keyframes pyramid-shading {
+	0% {
+			background-color: #272C34
+	}
+	30% {
+			background-color: #F4F4F4
+	}
+	70% {
+			background-color: #DDDADA
+	}
+	100% {
+			background-color: #272C34			
+	}
+}
+
+@keyframes shadow-on-the-floor {
+	0% {
+			transform: scaleY(0);
+			-webkit-clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+			clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+      /* 0%: Inicia la animación con el elemento escalado verticalmente a cero (invisible) y recortado por un polígono que abarca todo el ancho (100%) del elemento. */
+	}
+	30% {
+			transform: scaleY(1);
+			-webkit-clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+			clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+      /* 30%: El elemento se escala verticalmente a su tamaño completo y se recorta por un polígono que tiene un punto intermedio en el ancho del elemento (80%), creando una sombra alargada. */
+	}
+	55% {
+			transform: scaleY(0.4);
+      /* 55%: El elemento se escala verticalmente a un 40% de su tamaño completo. */
+	}
+	75% {
+			transform: scaleY(1);
+      /* 75%: El elemento vuelve a escalar verticalmente a su tamaño completo. */
+	}
+	100% {
+			transform: scaleY(0);
+			-webkit-clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+			clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+      /* 100%: El elemento vuelve a escalarse verticalmente a cero (invisible) y se recorta por un polígono que abarca solo el borde inferior del elemento (0% del ancho). */
+	}
+}
+
+
+.frame7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #495f8a;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center7 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.text-lg {
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: uppercase;	
+	margin: 0;
+	letter-spacing: 0.6px;
+}
+	
+.text-sm {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.card-wrapper {
+	background: white;
+	height: 220px;
+	width: 280px;
+	box-shadow: 10px 10px 15px 0;
+}
+
+.card-header {
+	background: #23395D;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 14px;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+}
+
+.card-title,
+card-revenue {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+}
+
+.card-revenue {
+	text-align: end;
+}
+
+.graph-parameters {
+	color: #777777;
+	padding: 8px 14px;
+	display: flex;
+	flex-direction: column;
+	font-size: 10px;
+}
+
+.graph-key {
+	margin-top: 8px;
+	align-self: end;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.key-views,
+.key-purchases {
+	display: inline-block;
+	width: 16px;
+	height: 4px;
+	border-radius: 4px;
+	margin-left: 16px;
+}
+	
+.key-views{
+	background: #a1b0cd;
+}
+	
+.key-purchases {
+	background: #354565;
+}
+
+
+.chart {
+		position: relative;
+		height: 81px;
+		width: 230px;
+		margin: 0 auto;
+}
+.x-line {
+	stroke: #d3d3d3;
+	stroke-width: 1;
+}
+
+.data-line-views,
+.data-line-purchases,
+.data-line-heart{
+	stroke-width: 2;
+  /* stroke-width: 2;: Esto establece el ancho del trazo en 2 unidades de la medida especificada. El trazo es la línea que sigue el contorno de la forma en el SVG. */
+	fill: transparent;
+  /* fill: transparent;: Esto indica que el interior de la forma (si la hay) será transparente, es decir, no se rellenará con ningún color. */
+	stroke-dasharray: 310;
+  /* stroke-dasharray: 310;: Esto define un patrón de guiones y espacios para el trazo. En este caso, hay 310 unidades de trazo seguidas de 310 unidades de espacio. Esto puede usarse para crear un efecto de trazo punteado. */
+	stroke-dashoffset: 310;
+  /* stroke-dashoffset: 310;: Esto establece el desplazamiento inicial del trazo punteado. En este caso, el trazo se desplaza 310 unidades desde el principio, lo que puede tener efectos visuales como hacer que el trazo aparezca animado o parcialmente oculto inicialmente. */
+	animation: line-graph-animated 1.5s ease-in forwards;
+}
+
+
+
+
+
+.data-line-views {
+	stroke: #a1b0cd;
+}
+
+.data-line-purchases {
+	stroke: #354565;
+}
+
+.data-line-heart {
+	stroke: red;
+  /* La declaración stroke: red; en CSS se utiliza para establecer el color del
+   trazo de un elemento SVG o de un elemento al que se le aplique una propiedad de trazo
+    (como border en el caso de elementos HTML). En este caso, el color del trazo se establecerá 
+    en rojo (#FF0000 en formato hexadecimal). */
+}
+
+.data-point-views {
+	--dot-fill: #a1b0cd;
+}
+
+.data-point-purchases {
+	--dot-fill: #354565;
+}
+
+.data-point-heart {
+	--dot-fill: #FF0000;
+}
+
+@keyframes line-graph-animated {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+/* stroke-dashoffset: 0;: Dentro de los keyframes, se especifica que el valor de la propiedad 
+stroke-dashoffset debe ser 0 al final de la animación. stroke-dashoffset controla el desplazamiento 
+de un trazo discontinuo a lo largo de su ruta. Un valor de 0 significa que el trazo se mostrará
+ completamente sin ningún desplazamiento, lo que efectivamente hace que la línea completa sea visible. */
+
+.data-point-views,
+.data-point-purchases,
+.data-point-heart{
+	cursor: pointer;
+	fill: transparent;
+	animation: dot-graph-animated 1s ease-out 1.15s forwards;
+}
+
+@keyframes dot-graph-animated {
+	to {
+		fill: var(--dot-fill);
+	}
+	/* Esto hará que todos los elementos con la clase .dot tengan un fondo del color definido en 
+	la variable --dot-fill. Si en algún momento necesitas cambiar el color, solo tienes que modificar 
+	el valor de la variable --dot-fill en un solo lugar en tu hoja de estilo, y todos los elementos que 
+	utilicen esa variable se actualizarán automáticamente. */
+}
+
+	.days {
+		margin-top: 15px;
+		display: flex;
+		justify-content: space-between;
+		text-transform: uppercase;
+	}
+
+/* Tooltips */
+.data-tooltip-views,
+.data-tooltip-purchases,
+.data-tooltip-heart{
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	color: #fff;
+	border-radius: 2px;
+	padding: 3px;
+	z-index: 10;
+	height: 0;
+	clip-path: polygon(
+		0% 0%,
+		100% 0%,
+		100% 75%,
+		65% 75%,
+		50% 100%,
+		35% 75%,
+		0% 75%
+	);
+	transition: all 250ms ease-in-out;
+}
+
+.data-tooltip-views {
+	background-color: #a1b0cd;
+}
+
+.data-tooltip-views:nth-child(1) {
+	top: 30px;
+	left: -13px;
+}
+
+.data-tooltip-views:nth-child(2) {
+	top: 0px;
+	left: 24px;
+}
+
+.data-tooltip-views:nth-child(3) {
+	top: 7px;
+	left: 61px;
+}
+
+.data-tooltip-views:nth-child(4) {
+	bottom: 60px;
+	left: 98px;
+}
+
+.data-tooltip-views:nth-child(5) {
+	bottom: 36px;
+	left: 135px;
+}
+
+.data-tooltip-views:nth-child(6) {
+	bottom: 29px;
+	left: 172px;
+}
+
+.data-tooltip-views:nth-child(7) {
+	bottom: 53px;
+	left: 209px;
+}
+
+.data-tooltip-purchases {
+	background-color: #354565;
+}
+
+.data-tooltip-purchases:nth-child(1) {
+	top: 42px;
+	left: -13px;
+}
+
+.data-tooltip-purchases:nth-child(2) {
+	top: 29px;
+	left: 24px;
+}
+
+.data-tooltip-purchases:nth-child(3) {
+	top: 45px;
+	left: 61px;
+}
+
+.data-tooltip-purchases:nth-child(4) {
+	top: 33px;
+	left: 98px;
+}
+
+.data-tooltip-purchases:nth-child(5) {
+	bottom: 20px;
+	left: 135px;
+}
+
+.data-tooltip-purchases:nth-child(6) {
+	bottom: 4px;
+	left: 172px;
+}
+
+.data-tooltip-purchases:nth-child(7) {
+	bottom: 18px;
+	left: 209px;
+}
+
+.data-tooltip-heart {
+	background-color: #FF0000;
+}
+
+.data-tooltip-heart:nth-child(1) {
+	bottom: 55px;
+	left: 98px;
+}
+
+.data-tooltip-heart:nth-child(2) {
+	bottom: 70px;
+	left: 90px;
+}
+
+.data-tooltip-heart:nth-child(3) {
+	bottom: 78px;
+	left: 73px;
+}
+
+.data-tooltip-heart:nth-child(4) {
+	bottom: 70px;
+	left: 64px;
+}
+
+.data-tooltip-heart:nth-child(5) {
+	top: 32px;
+	left: 82px;
+}
+
+.data-tooltip-heart:nth-child(6) {
+	top: 60px;
+	left: 98px;
+}
+
+.data-tooltip-heart:nth-child(7) {
+	top: 32px;
+	left: 114px;
+}
+
+.data-tooltip-heart:nth-child(8) {
+	bottom: 70px;
+	left: 130px;
+}
+.data-tooltip-heart:nth-child(9) {
+	bottom: 78px;
+	left: 123px;
+}
+.data-tooltip-heart:nth-child(10) {
+	bottom: 70px;
+	left: 106px;
+}
+
+
+
+
